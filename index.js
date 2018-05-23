@@ -25,7 +25,7 @@ module.exports = function (options) {
 		if (file.isNull()) {
 			return cb();
 		}
-		ssiparser(file.contents.toString(), path.join(cfg.root, cfg.dir), freshRun, function (err, data) {
+		ssiparser(file.contents.toString(), cfg.root, path.join(cfg.root, cfg.dir), freshRun, function (err, data) {
 			if (err) {
 				self.emit('error', new gutil.PluginError(PLUGIN_NAME, err, {fileName: file.path}));
 				return cb();
